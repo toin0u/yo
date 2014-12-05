@@ -1,0 +1,41 @@
+{
+    "name"        : "toin0u/yo",
+    "type"        : "library",
+    "description" : "Just Yo API wrapper",
+    "keywords"    : ["yo", "api", "justyo.co", "yoapp"],
+    "homepage"    : "https://github.com/toin0u/yo",
+    "license"     : "MIT",
+
+    "authors" : [
+        {
+            "name"     : "Antoine Corcy",
+            "email"    : "contact@sbin.dk",
+            "homepage" : "http://sbin.dk",
+            "role"     : "Developer"
+        }
+    ],
+
+    "support" : {
+        "issues" : "https://github.com/toin0u/yo/issues",
+        "source" : "https://github.com/toin0u/yo"
+    },
+
+    "require" : {
+        "php"                  : ">=5.3.3",
+        "egeloen/http-adapter" : "~0.5"
+    },
+
+    "require-dev": {
+        "phpspec/phpspec" : "~2.0"
+    },
+
+    "autoload" : {
+        "psr-4" : { "Yo\\": "src/" }
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
