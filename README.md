@@ -1,7 +1,7 @@
 Yo
 ==
 
-DESCRIPTION
+Just Yo API wrapper.
 
 [![Build Status](https://secure.travis-ci.org/toin0u/yo.png)](http://travis-ci.org/toin0u/yo)
 [![Latest Stable Version](https://poser.pugx.org/toin0u/yo/v/stable.png)](https://packagist.org/packages/toin0u/yo)
