@@ -59,7 +59,7 @@ class Yo
     }
 
     /**
-     * Send a Yo to an user with or without a Bag object.
+     * Yo an user with or without a Bag object.
      *
      * @see http://docs.justyo.co/v1.0/docs/yo
      *
@@ -81,7 +81,7 @@ class Yo
     }
 
     /**
-     * Send a Yo to all subscribers with or without a Link object.
+     * Yo all your subscribers with or without a Link object.
      * /!\ only one Yo all once per minute /!\
      *
      * @see http://docs.justyo.co/v1.0/docs/yoall
