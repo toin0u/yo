@@ -16,7 +16,6 @@ use Ivory\HttpAdapter\Event\Subscriber\StatusCodeSubscriber;
 use Ivory\HttpAdapter\HttpAdapterInterface;
 use Ivory\HttpAdapter\Message\InternalRequestInterface;
 use Yo\Bag\Link;
-use Yo\Bag\Location;
 
 /**
  * @author Antoine Corcy <contact@sbin.dk>
