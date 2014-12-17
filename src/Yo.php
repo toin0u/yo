@@ -142,7 +142,7 @@ class Yo
             throw new \RuntimeException(sprintf(
                 '[Yo] something went wrong `%s` the response body was `%s` !',
                 $e->getMessage(),
-                $e->getResponse()->getBody()->getContents()
+                $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : 'not defined'
             ));
         }
     }

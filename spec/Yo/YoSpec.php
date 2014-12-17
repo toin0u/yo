@@ -68,6 +68,35 @@ class YoSpec extends \PhpSpec\ObjectBehavior
     /**
      * @param Ivory\HttpAdapter\HttpAdapterInterface $adapter
      */
+    function it_throws_an_exception_correctly_when_there_is_no_response($adapter)
+    {
+        $exception = new HttpAdapterException('An error occurred when fetching the URL "https://api.justyo.co/yo" with the adapter "curl" ("SSL certificate problem: Invalid certificate chain").');
+        $exception->setResponse();
+
+        $adapter
+            ->send(
+                sprintf('%s/yo', Yo::ENDPOINT),
+                InternalRequestInterface::METHOD_POST,
+                array(),
+                array(
+                    'api_token' => self::API_KEY,
+                    'username'  => 'WHOAREYOU',
+                )
+            )
+            ->willThrow($exception)
+        ;
+
+        $this
+            ->shouldThrow(new \RuntimeException(
+                '[Yo] something went wrong `An error occurred when fetching the URL "https://api.justyo.co/yo" with the adapter "curl" ("SSL certificate problem: Invalid certificate chain").` the response body was `not defined` !'
+            ))
+            ->duringUser('whoareyou')
+        ;
+    }
+
+    /**
+     * @param Ivory\HttpAdapter\HttpAdapterInterface $adapter
+     */
     function it_throws_an_exception_when_username_does_not_exist($adapter)
     {
         $stream    = new StringStream('{"code": 141, "error": "NO SUCH USER"}');
