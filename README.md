@@ -5,7 +5,9 @@ Yo
 
 [![Build Status](https://secure.travis-ci.org/toin0u/yo.png)](http://travis-ci.org/toin0u/yo)
 [![Latest Stable Version](https://poser.pugx.org/toin0u/yo/v/stable.png)](https://packagist.org/packages/toin0u/yo)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/toin0u/yo/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/toin0u/yo/?branch=master)
 [![Total Downloads](https://poser.pugx.org/toin0u/yo/downloads.png)](https://packagist.org/packages/toin0u/yo)
+[![License](https://poser.pugx.org/toin0u/yo/license.svg)](https://packagist.org/packages/toin0u/yo)
 
 
 Installation
