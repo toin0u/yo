@@ -11,7 +11,7 @@ Yo
 Installation
 ------------
 
-This library can be found on [Packagist](https://packagist.org/packages/toin0u/NAME).
+This library can be found on [Packagist](https://packagist.org/packages/toin0u/yo).
 The recommended way to install this is through [composer](http://getcomposer.org).
 
 Run these commands to install composer, the library and its dependencies:
@@ -91,7 +91,16 @@ This method returns nothing. Please note The API allows only one Yo once per min
 
 ### /accounts/ ###
 
-Not implemented yet. Coming soon.
+```php
+// ...
+
+$yo->create('barbaz', 'newpassword');
+```
+
+Please note that you can provide a callback url, an email, a description and a boolean
+to tell if the account requires location or not.
+
+[Read more](http://docs.justyo.co/v1.0/docs/accounts)
 
 ### /check_username/ ###
 

@@ -284,6 +284,32 @@ class YoSpec extends \PhpSpec\ObjectBehavior
     }
 
     /**
+     * @param Ivory\HttpAdapter\HttpAdapterInterface $adapter
+     */
+    function it_creates_a_new_account_successfully($adapter)
+    {
+        $adapter
+            ->send(
+                sprintf('%s/accounts/', Yo::ENDPOINT),
+                InternalRequestInterface::METHOD_POST,
+                array(),
+                array(
+                    'new_account_username' => strtoupper('MYNEWACCOUNT'),
+                    'new_account_passcode' => 'mypassword',
+                    'callback_url'         => '',
+                    'email'                => '',
+                    'description'          => '',
+                    'needs_location'       => false,
+                    'api_token'            => self::API_KEY,
+                )
+            )
+            ->willReturn(null)
+        ;
+
+        $this->create('mynewaccount', 'mypassword')->shouldReturn(null);
+    }
+
+    /**
      * @param Ivory\HttpAdapter\HttpAdapterInterface      $adapter
      * @param Ivory\HttpAdapter\Message\ResponseInterface $response
      */

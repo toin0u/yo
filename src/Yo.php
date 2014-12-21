@@ -98,6 +98,33 @@ class Yo
     }
 
     /**
+     * Create new Yo account.
+     *
+     * @see http://docs.justyo.co/v1.0/docs/accounts
+     *
+     * @param string  $username
+     * @param string  $password
+     * @param string  $callbackUrl
+     * @param string  $email
+     * @param string  $description
+     * @param boolean $needsLocation
+     */
+    public function create($username, $password, $callbackUrl = '', $email = '', $description = '', $needsLocation = false)
+    {
+        $data = array(
+            'new_account_username' => strtoupper($username),
+            'new_account_passcode' => $password,
+            'callback_url'         => $callbackUrl,
+            'email'                => $email,
+            'description'          => $description,
+            'needs_location'       => $needsLocation,
+            'api_token'            => $this->apiToken,
+        );
+
+        $this->send('accounts/', InternalRequestInterface::METHOD_POST, $data);
+    }
+
+    /**
      * Get total of subscribers.
      *
      * @see http://docs.justyo.co/v1.0/docs/subscribers_count
