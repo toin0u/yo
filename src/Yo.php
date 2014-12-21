@@ -73,10 +73,10 @@ class Yo
             'username'  => strtoupper($username),
         ), $bag);
 
-        $response = $this->send('yo', InternalRequestInterface::METHOD_POST, $data);
+        $response = $this->send('yo/', InternalRequestInterface::METHOD_POST, $data);
         $content  = json_decode($response->getBody()->getContents());
 
-        return 'OK' === $content->result;
+        return (boolean) $content->success;
     }
 
     /**
@@ -94,7 +94,7 @@ class Yo
             'api_token' => $this->apiToken,
         ), $link);
 
-        $this->send('yoall', InternalRequestInterface::METHOD_POST, $data);
+        $this->send('yoall/', InternalRequestInterface::METHOD_POST, $data);
     }
 
     /**
@@ -110,7 +110,7 @@ class Yo
         $response = $this->send(sprintf('subscribers_count/?api_token=%s', $this->apiToken));
         $content  = json_decode($response->getBody());
 
-        return $content->result;
+        return (integer) $content->count;
     }
 
     /**
@@ -131,7 +131,7 @@ class Yo
         ));
         $content = json_decode($response->getBody());
 
-        return 'EXISTS' === $content->result;
+        return (boolean) $content->exists;
     }
 
     private function send($url, $method = InternalRequestInterface::METHOD_GET, array $data = array())

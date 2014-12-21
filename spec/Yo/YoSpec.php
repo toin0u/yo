@@ -47,11 +47,11 @@ class YoSpec extends \PhpSpec\ObjectBehavior
      */
     function it_sends_a_yo_to_a_given_username_without_anything($adapter, $response, $stream)
     {
-        $stream->getContents()->willReturn('{"result" : "OK"}');
+        $stream->getContents()->willReturn('{"success":true}');
         $response->getBody()->willReturn($stream);
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -75,7 +75,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
 
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -106,7 +106,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
 
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -139,7 +139,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
 
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -167,11 +167,11 @@ class YoSpec extends \PhpSpec\ObjectBehavior
     {
         $link = new Link('http://sbin.dk/');
 
-        $stream->getContents()->willReturn('{"result":"OK"}');
+        $stream->getContents()->willReturn('{"success":true}');
         $response->getBody()->willReturn($stream);
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -195,11 +195,11 @@ class YoSpec extends \PhpSpec\ObjectBehavior
     {
         $location = new Location(55.699953, 12.552736);
 
-        $stream->getContents()->willReturn('{"result":"OK"}');
+        $stream->getContents()->willReturn('{"success":true}');
         $response->getBody()->willReturn($stream);
         $adapter
             ->send(
-                sprintf('%s/yo', Yo::ENDPOINT),
+                sprintf('%s/yo/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -221,7 +221,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
     {
         $adapter
             ->send(
-                sprintf('%s/yoall', Yo::ENDPOINT),
+                sprintf('%s/yoall/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array('api_token' => self::API_KEY)
@@ -241,7 +241,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
 
         $adapter
             ->send(
-                sprintf('%s/yoall', Yo::ENDPOINT),
+                sprintf('%s/yoall/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array(
@@ -267,7 +267,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
 
         $adapter
             ->send(
-                sprintf('%s/yoall', Yo::ENDPOINT),
+                sprintf('%s/yoall/', Yo::ENDPOINT),
                 InternalRequestInterface::METHOD_POST,
                 array(),
                 array('api_token' => self::API_KEY)
@@ -289,7 +289,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
      */
     function it_returns_the_total_number_of_subscribers($adapter, $response)
     {
-        $response->getBody()->willReturn('{"result":123}');
+        $response->getBody()->willReturn('{"count":123}');
         $adapter
             ->send(
                 sprintf('%s/subscribers_count/?api_token=%s', Yo::ENDPOINT, self::API_KEY),
@@ -309,7 +309,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
      */
     function it_returns_true_when_a_given_username_exists($adapter, $response)
     {
-        $response->getBody()->willReturn('{"result":"EXISTS"}');
+        $response->getBody()->willReturn('{"exists":true}');
         $adapter
             ->send(
                 sprintf('%s/check_username/?api_token=%s&username=FOOBAR', Yo::ENDPOINT, self::API_KEY),
@@ -329,7 +329,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
      */
     function it_returns_false_when_a_given_username_done_not_exist($adapter, $response)
     {
-        $response->getBody()->willReturn('{"result":"DOES NO EXISTS"}');
+        $response->getBody()->willReturn('{"exists":false}');
         $adapter
             ->send(
                 sprintf('%s/check_username/?api_token=%s&username=FOOBAR', Yo::ENDPOINT, self::API_KEY),
