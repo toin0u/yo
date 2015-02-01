@@ -1,10 +1,10 @@
 CHANGELOG
 =========
 
-??-??-????
+01-02-2015
 ----------
 
-- n/a
+- fix create API which needs a string of the boolean for `need_location`
 
 21-12-2014
 ----------
