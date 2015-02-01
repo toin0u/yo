@@ -299,7 +299,7 @@ class YoSpec extends \PhpSpec\ObjectBehavior
                     'callback_url'         => '',
                     'email'                => '',
                     'description'          => '',
-                    'needs_location'       => false,
+                    'needs_location'       => 'false',
                     'api_token'            => self::API_KEY,
                 )
             )

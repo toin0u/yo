@@ -117,7 +117,7 @@ class Yo
             'callback_url'         => $callbackUrl,
             'email'                => $email,
             'description'          => $description,
-            'needs_location'       => $needsLocation,
+            'needs_location'       => $needsLocation ? 'true' : 'false',
             'api_token'            => $this->apiToken,
         );
 
