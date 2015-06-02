@@ -22,7 +22,7 @@
 
     "require" : {
         "php"                  : ">=5.3.3",
-        "egeloen/http-adapter" : "~0.5"
+        "egeloen/http-adapter" : "0.5.*"
     },
 
     "autoload" : {
