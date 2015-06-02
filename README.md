@@ -9,6 +9,8 @@ Yo
 [![Total Downloads](https://poser.pugx.org/toin0u/yo/downloads.png)](https://packagist.org/packages/toin0u/yo)
 [![License](https://poser.pugx.org/toin0u/yo/license.svg)](https://packagist.org/packages/toin0u/yo)
 
+- [Send Yo from the console](https://github.com/toin0u/yo-cli)
+- [CakePHP 3.x plugin](https://github.com/toin0u/cakephp-yo)
 
 Installation
 ------------
